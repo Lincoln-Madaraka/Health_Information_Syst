@@ -1,0 +1,84 @@
+{% extends 'admin_nav.html' %}
+{% load static %}
+{% block content %}
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+</head>
+<body>
+{% if error == "no" %}
+     <script>
+	   alert('Patient Record has been Updated');
+       window.location=('{% url 'view_patient' %}');
+     </script>
+{% endif %}
+
+{% if error == "yes" %}
+     <script>
+	    alert('Something went wrong, Try Again');
+     </script>
+{% endif %}
+
+<br><br><br><br>
+<div class="container card shadow m-5">
+		<div class="card-body">
+			<h5 class="p-2" style="border-bottom: 2px solid orange">Edit Patient</h5>
+             <br>
+			<div class="container-fluid">
+				<form method="post">
+                    {% csrf_token %}
+					<div class="form-row">
+
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label>Patient Name</label>
+								<input type="text" name="name" class="form-control" value="{{patient.name}}" required>
+							</div>
+						</div>
+
+                    	<div class="col-sm-12">
+							<div class="form-group">
+								<label>Mobile Number</label>
+								<input type="text" name="mobile" class="form-control" value="{{patient.mobile}}" required>
+							</div>
+						</div>
+
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label>Gender</label>
+								{% if patient.gender == "Male" %}
+								<input type="radio" name="gender" value="Male" checked> Male
+								<input type="radio" name="gender" value="Female"> Female
+								{% endif %}
+
+								{% if patient.gender == "Female" %}
+								<input type="radio" name="gender" value="Male"> Male
+								<input type="radio" name="gender" value="Female" checked> Female
+								{% endif %}
+
+							</div>
+						</div>
+
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label>Address</label>
+                                <textarea name="address" class="form-control">{{patient.address}}</textarea>
+							</div>
+						</div>
+
+
+                      </div>
+					<hr>
+					<input type="submit" value="Update" class="btn btn-primary">
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+{% endblock content %}

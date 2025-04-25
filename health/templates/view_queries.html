@@ -1,0 +1,54 @@
+{% extends 'admin_nav.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+
+<br><br><br><br>
+<div class="container card shadow m-5">
+    <div class="card-body">
+        <h5 class="p-2" style="border-bottom: 2px solid orange">View Enquiry Queries</h5>
+        <div class="container mt-5">
+		<h1 class="text-success text-center"></h1>
+           <table class="table table-bordered">
+                                <tr align="center">
+                                    <td colspan="4" style="font-size : 20px; color : red"> View Queries Details</td>
+                                </tr>
+
+                                <tr>
+                                    <th>Name</th>
+                                    <td>{{contact.name}}</td>
+
+                                    <th>Contact No.</th>
+                                    <td>{{contact.contact}}</td>
+                                </tr>
+
+                                <tr>
+                                    <th>Email ID</th>
+                                    <td>{{contact.email}}</td>
+
+                                    <th>Subject</th>
+                                    <td>{{contact.subject}}</td>
+                                </tr>
+
+                                <tr>
+                                    <th>Enquiry Message</th>
+                                    <td colspan="3">{{contact.message}}</td>
+                                </tr>
+
+                                <tr>
+                                    <th>Enquiry Date</th>
+                                    <td colspan="3">{{contact.msgdate}}</td>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+{% endblock content %}
