@@ -1,0 +1,82 @@
+{% extends 'admin_nav.html' %}
+{% load static %}
+{% block content %}
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+</head>
+<body>
+{% if error == "no" %}
+     <script>
+	   alert('Record Save Successfully');
+       window.location=('{% url 'view_appointment' %}');
+     </script>
+{% endif %}
+
+{% if error == "yes" %}
+     <script>
+	    alert('Something went wrong, Try Again');
+     </script>
+{% endif %}
+
+<br><br><br><br>
+<div class="container card shadow m-5">
+		<div class="card-body">
+			<h5 class="p-2" style="border-bottom: 2px solid orange">Add Appointment</h5>
+             <br>
+			<div class="container-fluid">
+				<form method="post">
+                    {% csrf_token %}
+					<div class="form-row">
+
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label>Doctor Name</label>
+								<select name="doctor" class="form-control">
+									{% for i in doctor %}
+									<option value="{{i.name}}">{{i.name}} [{{i.id}}]</option>
+									{% endfor %}
+								</select>
+							</div>
+						</div>
+
+                        <div class="col-sm-12">
+							<div class="form-group">
+								<label>Patient Name</label>
+								<select name="patient" class="form-control">
+									{% for i in patient %}
+									<option value="{{i.name}}">{{i.name}} [{{i.id}}]</option>
+									{% endfor %}
+								</select>
+							</div>
+						</div>
+
+                    	<div class="col-sm-12">
+							<div class="form-group">
+								<label>Date</label>
+								<input type="date" name="date" class="form-control" required>
+							</div>
+						</div>
+
+                        <div class="col-sm-12">
+							<div class="form-group">
+								<label>Time</label>
+								<input type="time" name="time" class="form-control" required>
+							</div>
+						</div>
+
+                    </div>
+					<hr>
+					<input type="submit" value="Submit" class="btn btn-primary">
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+{% endblock content %}

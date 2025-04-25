@@ -1,0 +1,71 @@
+{% extends 'navigation.html' %}
+    {% load static %}
+    {% block body %}
+    
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+    <section id="about">
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="section-title">
+                            <div class="section-subtitle">About Us</div>
+                            <h2 class="section-main-title">
+                                All About <strong>Hospitals</strong>
+                            </h2>
+                        </div>
+    
+                        <div class="about-item">
+                            <p>A hospital is a place where a person goes to be healed when he or
+                                she is sick or injured. Hospitals also treat people who do not stay
+                                overnight, called outpatients. Doctors and nurses work at hospitals.
+                                Doctors make use of advanced medical technology to heal patients.</p>
+                        </div>
+                    </div>
+    
+                    <div class="col-sm-4 offset-sm-2">
+                     <div class="about-box">
+                       <img src="{% static 'images/about-1.jpg' %}">
+                     </div>
+                    </div>
+                </div>
+    
+                <div class="row mt-5">
+                    <div class="col-sm-4">
+                     <div class="about-boxx">
+                       <img src="{% static 'images/about1.jpg' %}">
+                     </div>
+                    </div>
+                    <div class="col-sm-6 offset-sm-2">
+                    <div class="about-item mt-5">
+                        <h4><span style="color:red">All About</span> <span style="color:green"><b>Doctor & Nourse</b></span></h4>
+                            <p>Doctors and Nurses may refer to a children's game of imaginative
+                                role-playing where medical profession roles are adopted and acted out.
+                            A nurse is a person who is trained to give care to people who are sick or injured.
+                                Nurses work with doctors and other health care workers to make patients.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row mt-5">
+                    <div class="col-sm-6">
+                    <div class="about-item mt-5">
+                        <h4><span style="color:green">All About</span> <span style="color:blue"><b>Sweeper</b></span></h4>
+                            <p>A Hospital cleaner a cleaning operative is a type of industrial or
+                                domestic worker who cleans homes,commercial premises and also clean
+                                the Hospital Plateform.A cleaner is someone who takes
+                                away garbage and cleans surfaces. Cleaners sometimes repair things,
+                                and maintain their equipment in good working.</p>
+                        </div>
+                    </div>
+    
+                    <div class="col-sm-4 offset-sm-2">
+                     <div class="about-box">
+                       <img src="{% static 'images/about2.jpg' %}">
+                     </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+    {% endblock%}

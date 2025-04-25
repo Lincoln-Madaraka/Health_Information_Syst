@@ -1,0 +1,102 @@
+{% extends 'navigation.html' %}
+{% load static %}
+{% block body %}
+
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Admin Login </title>
+
+  <style type="text/css">
+    body {
+      color: #aa082e;
+      background-color: #b6bde7;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    a:link {
+      text-decoration: none;
+    }
+
+    .note {
+      text-align: center;
+      height: 80px;
+      background: -webkit-linear-gradient(left, #0072ff, #8811c5);
+      color: #fff;
+      font-weight: bold;
+      line-height: 80px;
+    }
+
+    .form-content {
+      padding: 4%;
+      border: 1px solid #ced4da;
+      margin-bottom: 1%;
+      text-align : center;
+    }
+
+    .form-control {
+      border-radius: 1.5rem;
+      text-align : center;
+    }
+
+    .btnSubmit {
+      border: none;
+      border-radius: 1.5rem;
+      padding: 1%;
+      width: 30%;
+      cursor: pointer;
+      background: #0062cc;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+{% if error == "no" %}
+     <script>
+	   alert('Logged In Successfully');
+       window.location=('{% url 'admin_home' %}');
+     </script>
+{% endif %}
+
+{% if error == "yes" %}
+     <script>
+	    alert('Something went wrong, Try Again');
+     </script>
+{% endif %}
+
+<br><br><br><br>
+    <form method="post">
+    {% csrf_token %}
+    <div class="container register-form mt-2" style="width : 600px;">
+      <div class="form">
+        <div class="note">
+          <p>Admin Login</p>
+        </div>
+
+        <div class="form-content">
+          <div class="row mt-5">
+
+            <div class="col-md-12">
+              <div class="form-group">
+                  <input type="text" name="uname" class="form-control py-3" placeholder="Enter User Name">
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="form-group">
+                <input type="password" name="pwd" class="form-control py-3" placeholder="Enter Password"><br>
+              </div>
+            </div>
+
+          </div>
+          <button type="submit" class="btnSubmit">Login</button>
+        </div>
+      </div>
+    </div>
+
+  </form>
+
+
+{% endblock%}
