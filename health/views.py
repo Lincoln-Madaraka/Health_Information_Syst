@@ -167,7 +167,7 @@ def add_appointment(request):
     error=""
     if not request.user.is_staff:
         return redirect('login')
-    doctor1 = Program.objects.all()
+    program = Program.objects.all()
     patient1 = Patient.objects.all()
     if request.method=='POST':
         d = request.POST['program']
