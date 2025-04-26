@@ -1,0 +1,6 @@
+asgiref==3.8.1
+Django==5.2
+gunicorn==23.0.0
+packaging==25.0
+sqlparse==0.5.3
+whitenoise==6.9.0
