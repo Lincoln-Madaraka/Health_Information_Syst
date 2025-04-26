@@ -1,6 +1,6 @@
 from django.db import models
 
-class Doctor(models.Model):
+class Program(models.Model):
     name = models.CharField(max_length=50)
     mobile = models.IntegerField()
     special = models.CharField(max_length=50)
@@ -18,13 +18,13 @@ class Patient(models.Model):
        return self.name;
 
 class Appointment(models.Model):
-    doctor = models.ForeignKey(Doctor,on_delete=models.CASCADE)
+    program = models.ForeignKey(Program,on_delete=models.CASCADE)
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
     date1 = models.DateField()
     time1 = models.TimeField()
 
     def __str__(self):
-       return self.doctorname+"--"+self.patient.name;
+       return self.programname+"--"+self.patient.name;
 
 class Contact(models.Model):
     name = models.CharField(max_length=100, null=True)

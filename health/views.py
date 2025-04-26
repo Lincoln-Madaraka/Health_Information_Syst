@@ -46,7 +46,7 @@ def adminlogin(request):
 def admin_home(request):
     if not request.user.is_staff:
         return redirect('login_admin')
-    dc = Doctor.objects.all().count()
+    dc = Program.objects.all().count()
     pc = Patient.objects.all().count()
     ac = Appointment.objects.all().count()
 
@@ -57,7 +57,7 @@ def Logout(request):
     logout(request)
     return redirect('index')
 
-def add_doctor(request):
+def add_program(request):
     error=""
     if not request.user.is_staff:
         return redirect('login')
@@ -66,43 +66,43 @@ def add_doctor(request):
         m = request.POST['mobile']
         sp = request.POST['special']
         try:
-            Doctor.objects.create(name=n,mobile=m,special=sp)
+            Program.objects.create(name=n,mobile=m,special=sp)
             error="no"
         except:
             error="yes"
     return render(request,'add_doctor.html', locals())
 
-def view_doctor(request):
+def view_program(request):
     if not request.user.is_staff:
         return redirect('login')
-    doc = Doctor.objects.all()
-    d = {'doc':doc}
-    return render(request,'view_doctor.html', d)
+    prog = Program.objects.all()
+    p = {'prog':prog}
+    return render(request,'view_doctor.html', p)
 
-def Delete_Doctor(request,pid):
+def Delete_Program(request,pid):
     if not request.user.is_staff:
         return redirect('login')
-    doctor = Doctor.objects.get(id=pid)
-    doctor.delete()
+    program = Program.objects.get(id=pid)
+    program.delete()
     return redirect('view_doctor.html')
 
-def edit_doctor(request,pid):
+def edit_program(request,pid):
     error = ""
     if not request.user.is_authenticated:
         return redirect('login')
     user = request.user
-    doctor = Doctor.objects.get(id=pid)
+    program = Program.objects.get(id=pid)
     if request.method == "POST":
         n1 = request.POST['name']
         m1 = request.POST['mobile']
         s1 = request.POST['special']
 
-        doctor.name = n1
-        doctor.mobile = m1
-        doctor.special = s1
+        program.name = n1
+        program.mobile = m1
+        program.special = s1
 
         try:
-            doctor.save()
+            program.save()
             error = "no"
         except:
             error = "yes"
@@ -167,21 +167,21 @@ def add_appointment(request):
     error=""
     if not request.user.is_staff:
         return redirect('login')
-    doctor1 = Doctor.objects.all()
+    doctor1 = Program.objects.all()
     patient1 = Patient.objects.all()
     if request.method=='POST':
-        d = request.POST['doctor']
+        d = request.POST['program']
         p = request.POST['patient']
         d1 = request.POST['date']
         t = request.POST['time']
-        doctor = Doctor.objects.filter(name=d).first()
+        program = Program.objects.filter(name=p).first()
         patient = Patient.objects.filter(name=p).first()
         try:
-            Appointment.objects.create(doctor=doctor, patient=patient, date1=d1, time1=t)
+            Appointment.objects.create(program=program, patient=patient, date1=d1, time1=t)
             error="no"
         except:
             error="yes"
-    d = {'doctor':doctor1,'patient':patient1,'error':error}
+    p = {'program':program,'patient':patient1,'error':error}
     return render(request,'add_appointment.html', d)
 
 def view_appointment(request):

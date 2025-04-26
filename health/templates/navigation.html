@@ -110,13 +110,14 @@
 }
 
 .nav-link:hover{
-  color: lightblue !important;
+  color: hsl(60, 100%, 100%) !important;
   font-weight:bold;
-  background-color : #931B86;
+  background-color : hwb(130 4% 13% / 0.651);
   border-radius:10px
 }
 .nav-link{
   font-weight:bold;
+  margin-right: 1px;
 }
 
 .navbar-brand{
@@ -144,19 +145,19 @@
    <ul class="navbar-nav pl-5 text-center">
 
      <li class="nav-item">
-       <a class="nav-link" href="{% url 'index' %}" style="color:white"><ion-icon style="margin-right:2px" name="home-sharp"></ion-icon> Home</a>
+       <a class="nav-link" href="{% url 'index' %}" style="color:white"><ion-icon style="margin-right:8px" name="home-sharp"></ion-icon> Home</a>
      </li>
 
      <li class="nav-item">
-       <a class="nav-link" href="{% url 'about' %}" style="color:white"><ion-icon style="margin-right:2px" name="people"></ion-icon> About</a>
+       <a class="nav-link" href="{% url 'about' %}" style="color:white"><ion-icon style="margin-right:22px" name="people"></ion-icon> About</a>
      </li>
 
      <li class="nav-item">
-       <a class="nav-link" href="{% url 'contact' %}" style="color:white"><ion-icon style="margin-right:2px" name="people"></ion-icon> Contact</a>
+       <a class="nav-link" href="{% url 'contact' %}" style="color:white"><ion-icon style="margin-right:22px" name="people"></ion-icon> Contact</a>
      </li>
 
      <li class="nav-item">
-       <a class="nav-link" href="{% url 'login' %}" style="color:white"><i class="fas fa-sign-in-alt" style="margin-right:2px"></i> Admin Login</a>
+       <a class="nav-link" href="{% url 'login' %}" style="color:white"><i class="fas fa-sign-in-alt" style="margin: right 22px;px"></i> Admin Login</a>
      </li>
 
    </ul>

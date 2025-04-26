@@ -13,8 +13,8 @@
 <body>
 {% if error == "no" %}
      <script>
-	   alert('Record Saved Successfully');
-       window.location=('{% url 'view_doctor' %}');
+	   alert('Program Saved Successfully');
+       window.location=('{% url 'view_program' %}');
      </script>
 {% endif %}
 
@@ -27,7 +27,7 @@
 <br><br><br><br>
 <div class="container card shadow m-5">
 		<div class="card-body">
-			<h5 class="p-2" style="border-bottom: 2px solid orange">Add Doctors</h5>
+			<h5 class="p-2" style="border-bottom: 2px solid orange">Add Program</h5>
              <br>
 			<div class="container-fluid">
 				<form method="post">
@@ -36,22 +36,22 @@
 
 						<div class="col-sm-12">
 							<div class="form-group">
-								<label>Doctor Name</label>
-								<input type="text" name="name" class="form-control" placeholder="Enter Doctor Name" required>
+								<label>Program Name</label>
+								<input type="text" name="name" class="form-control" placeholder="Enter Program Name" required>
 							</div>
 						</div>
 
                     	<div class="col-sm-12">
 							<div class="form-group">
-								<label>Contact Number</label>
-								<input type="text" name="mobile" class="form-control" placeholder="Enter Ten Digit Mobile Number" required>
+								<label>Serial Number</label>
+								<input type="text" name="mobile" class="form-control" placeholder="Enter Program Number" required>
 							</div>
 						</div>
 
 						<div class="col-sm-12">
 							<div class="form-group">
-								<label>Specialization</label>
-								<input type="text" name="special" class="form-control" placeholder="Enter Doctor Specialization" required>
+								<label>Category</label>
+								<input type="text" name="special" class="form-control" placeholder="Program Category (STI, Nutritional, e.t.c)" required>
 							</div>
 						</div>
 
