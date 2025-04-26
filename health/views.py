@@ -167,22 +167,23 @@ def add_appointment(request):
     error=""
     if not request.user.is_staff:
         return redirect('login')
-    program = Program.objects.all()
+
+    program1 = Program.objects.all()
     patient1 = Patient.objects.all()
     if request.method=='POST':
-        d = request.POST['program']
-        p = request.POST['patient']
+        p = request.POST['program']
+        p1 = request.POST['patient']
         d1 = request.POST['date']
         t = request.POST['time']
         program = Program.objects.filter(name=p).first()
-        patient = Patient.objects.filter(name=p).first()
+        patient = Patient.objects.filter(name=p1).first()
         try:
             Appointment.objects.create(program=program, patient=patient, date1=d1, time1=t)
             error="no"
         except:
             error="yes"
-    p = {'program':program,'patient':patient1,'error':error}
-    return render(request,'add_appointment.html', d)
+    p = {'program':program1,'patient':patient1,'error':error}
+    return render(request,'add_appointment.html', p)
 
 def view_appointment(request):
     if not request.user.is_staff:
