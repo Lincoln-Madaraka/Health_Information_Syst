@@ -12,6 +12,10 @@ This project simulates a **basic Health Information System** where a doctor (sys
 
 > Developed as part of the **CEMA Software Engineering Internship Application Task**.
 
+The project was deployed to render: [Deployed System](https://health-information-syst.onrender.com/) Login Username: admin Password: admin
+Powerpoint Slides: [View Slides](https://docs.google.com/presentation/d/1t-d_yXyOhkNgrmw327xdixcqX81_9nBN0f4DIM-Gf1c/edit?usp=drivesdk)
+Protype: [Watch Here](https://drive.google.com/file/d/1mxM-FePJjD4EieP43tuHWEX6jtkGLT1j/view?usp=drivesdk)
+
 ---
 
 ## Table of Contents
