@@ -70,7 +70,7 @@
 	margin-bottom: 7px;
 	padding-left: 7px;
 	text-transform: uppercase;
-	color: #aaaaaa;
+	color:darkorange;
 	font-size: 70px;
 	font-family: tahoma;
 	border-left: 3px solid;
@@ -80,6 +80,7 @@
 .section-main-title{
 	margin-bottom: 35px;
 	font-size: 30px;
+	color:chartreuse;
 }
 
 .about-box{
@@ -107,4 +108,7 @@
 .about-boxx img{
 	width: 100%;
 	transform: translateY(30px) translate(30px);
+}
+.about-item{
+	color: aliceblue;
 }
