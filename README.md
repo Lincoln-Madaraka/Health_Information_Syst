@@ -219,5 +219,5 @@ Deployment steps:
 
 ---
 
-# Thank you for reviewing this project! 🚀
+# Thank you for reviewing this project! 🚀 Optimization coming up soon
 
